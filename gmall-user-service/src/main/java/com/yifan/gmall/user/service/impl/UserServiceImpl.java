@@ -1,12 +1,13 @@
 package com.yifan.gmall.user.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.yifan.gmall.bean.UmsMember;
 import com.yifan.gmall.bean.UmsMemberReceiveAddress;
 import com.yifan.gmall.service.UserService;
 import com.yifan.gmall.user.mapper.UmsMemberReceiveAddressMapper;
 import com.yifan.gmall.user.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 
