@@ -2,6 +2,8 @@ package com.yifan.gmall.manage.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.yifan.gmall.bean.PmsBaseAttrInfo;
+import com.yifan.gmall.bean.PmsBaseAttrValue;
+import com.yifan.gmall.bean.PmsBaseSaleAttr;
 import com.yifan.gmall.service.AttrService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,6 +20,13 @@ public class AttrController {
     @Reference
     AttrService attrService;
 
+    @RequestMapping("baseSaleAttrList")
+    @ResponseBody
+    public List<PmsBaseSaleAttr> baseSaleAttrList( ){
+        List<PmsBaseSaleAttr> pmsBaseSaleAttrs = attrService.baseSaleAttrList();
+        return pmsBaseSaleAttrs;
+    }
+
     @RequestMapping("attrInfoList")
     @ResponseBody
     public List<PmsBaseAttrInfo> attrInfoList(String catalog3Id){
@@ -33,5 +42,12 @@ public class AttrController {
         String success = attrService.attrService(pmsBaseAttrInfo);
 
         return "success";
+    }
+
+    @RequestMapping("getAttrValueList")
+    @ResponseBody
+    public List<PmsBaseAttrValue> getAttrValueList(String attrId) {
+        List<PmsBaseAttrValue> pmsBaseAttrValues = attrService.getAttrValueList(attrId);
+        return pmsBaseAttrValues;
     }
 }

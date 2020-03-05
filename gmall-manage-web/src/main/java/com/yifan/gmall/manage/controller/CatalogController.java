@@ -1,9 +1,7 @@
 package com.yifan.gmall.manage.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.yifan.gmall.bean.PmsBaseCatalog1;
-import com.yifan.gmall.bean.PmsBaseCatalog2;
-import com.yifan.gmall.bean.PmsBaseCatalog3;
+import com.yifan.gmall.bean.*;
 import com.yifan.gmall.service.CatalogService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -39,4 +37,5 @@ public class CatalogController {
         List<PmsBaseCatalog3> catalog3s = catalogService.getCatalog3(catalog2Id);
         return catalog3s;
     }
+
 }
